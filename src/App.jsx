@@ -21,8 +21,8 @@ function App() {
     return password;
   }, [length, num, char, setpass]);
 
-  const copyPass = useCallback(() => {
-    passref.current?.select();
+  const copyPass = useCallback( async() => {
+    await passref.current?.select();
     window.navigator.clipboard.writeText(pass);
     alert("Password copied to clipboard ");
   }, [pass]);
